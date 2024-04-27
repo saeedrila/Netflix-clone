@@ -6,7 +6,7 @@ import Youtube from 'react-youtube'
 
 function Rowposter(props) {
   const [movies, setMovies] = useState([]);
-  const [urlId,seturlID] = useState('');
+  const [urlId,setUrlID] = useState('');
   const [error, setError] = useState('');
 
   useEffect(() => {
@@ -36,7 +36,7 @@ function Rowposter(props) {
       .then((response) => {
         console.log(response.data);
         if (response.data.results.length !== 0) {
-          seturlID(response.data.results[0]);
+          setUrlID(response.data.results[0]);
         } else {
           console.log('Trailer not available');
         }
